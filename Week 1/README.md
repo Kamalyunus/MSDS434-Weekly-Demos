@@ -1,3 +1,3 @@
-# 10-Week Demo Video Documentation
+/** Run this command on gcloud terminal to start VM compute instance **/
 
-The repository contains the code, demo video as well as notes used to complete weekly assignment
+gcloud compute instances create msds434-week1 --zone=us-central1-a --machine-type=g1-small --tags=http-server,https-server
