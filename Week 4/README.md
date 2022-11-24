@@ -1,0 +1,32 @@
+# Create an ingest to ETL pipeline using CSV files and Google BigQuery. Schedule a recurring cron job to batch update the data.
+
+Command Used: \
+
+curl -o imdb.gz https://datasets.imdbws.com/title.episode.tsv.gz
+
+gzip -dk imdb.gz
+
+gsutil -m cp imdb gs://msds434_week4/imdb/episode/
+
+bq ls
+
+bq mk imdb
+
+bq load --source_format=CSV --field_delimiter=tab --skip_leading_rows 1 \
+imdb.episode gs://msds434_week4/imdb/episode/imdb tconst:string,parentTconst:string,season:string,episode:string
+
+bq query 'SELECT * FROM msds434week4.imdb.episode LIMIT 10' 
+
+
+#!/bin/bash
+
+curl -o imdb.gz https://datasets.imdbws.com/title.episode.tsv.gz
+
+gzip -dk imdb.gz
+
+gsutil -m cp imdb gs://msds434_week4/imdb/episode/
+
+bq load --source_format=CSV --field_delimiter=tab --skip_leading_rows 1 \
+imdb.episode gs://msds434_week4/imdb/episode/imdb tconst:string,parentTconst:string,season:string,episode:string
+
+0 0 1 * * root /home/yunus_kamal/week4/schedule.sh
