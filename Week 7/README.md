@@ -1,6 +1,6 @@
 # Create a production and development environment and deploy your final project to both environments.
 
-/** Following Steps taken for Week 6 Requirements **/
+/** Following Steps taken for Week 7 Requirements **/
 
 I leveraged the "Use Google Cloud Deploy to deploy a sample application to Cloud Run" tutorial for deploying a "hello world" Go app to Cloud Run using Google Cloud deploy. \
 The tutorial covers creation of 3 separate environments (Dev, Stage, Prod) and deployment of Go application. 
