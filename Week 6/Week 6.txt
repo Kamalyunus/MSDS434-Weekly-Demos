@@ -1,0 +1,20 @@
+/** Following Steps taken for Week 6 Requirements **/
+
+
+1) Schedule BigQuery query to upload data on monthly basis to GCS bucket.
+
+2) Imported text data from GCS bucket to vertex AI as a managed dataset.
+
+3) Used Text classification AutoML to train model and it took around 6 hours for training.
+
+4) Using Vertex AI, I deployed model and tested it through postman
+
+/** Scheduled BQ Query in step one above **/
+EXPORT DATA OPTIONS(
+  uri='gs://msds434-finalproject/imdb/imdb_reviews_*.csv',
+  format='CSV',
+  overwrite=true,
+  header=false) AS
+SELECT distinct review, label 
+FROM  imdb.reviews
+WHERE label != 'Unsupervised'

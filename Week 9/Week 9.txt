@@ -1,0 +1,5 @@
+/**Run following command to deploy source code to Google Cloud Run**/
+
+/**This command is equivalent to running `gcloud builds submit --tag [IMAGE] ./app` and `gcloud run deploy project-demo --image [IMAGE]`**/
+
+gcloud run deploy project-demo --source ./app --allow-unauthenticated --port=8501 --memory=1Gi --region=us-central1
