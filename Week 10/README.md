@@ -3,3 +3,7 @@
 Final Project Code can be found at link:
 
 https://github.com/Kamalyunus/MSDS434-IMDB-Review-Sentiment 
+
+## Architecture
+
+![architecture diagram](./Architecture.drawio.png)
